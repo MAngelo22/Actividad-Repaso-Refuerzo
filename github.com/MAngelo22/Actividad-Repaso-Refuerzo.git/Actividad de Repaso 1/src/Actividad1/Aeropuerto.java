@@ -5,16 +5,14 @@ import java.util.ArrayList;
 public class Aeropuerto {
 	
 	private String Nombre, Ciudad;
-	private Avion Avion;
+	private ArrayList<Avion> Aviones;
 		
-	public Aeropuerto (String Nombre, String Ciudad, Avion Avion) {
+	public Aeropuerto (String Nombre, String Ciudad, ArrayList<Avion> Aviones) {
 	super();
 	setNombre(Nombre);
 	setCiudad(Ciudad);
-	setAvion(Avion);
+	setAviones(Aviones);
 	}
-	
-	private ArrayList<Avion> listaAvion;
 	
 	//Getters && Setters
 	public String getNombre() {
@@ -33,17 +31,22 @@ public class Aeropuerto {
 		this.Ciudad = Ciudad;
 	}
 	
-	public Avion getAvion() {
-		return Avion;
+	public ArrayList<Avion> getAviones() {
+		return Aviones;
 	}
 	
-	public void setAvion(Avion Avion) {
-		this.Avion = Avion;
+	public void setAviones(ArrayList<Avion> Aviones) {
+		this.Aviones = Aviones;
 	}		
 	
 	public String toString() {
-		return ("Bienvenido, Se encuentra en "+Nombre +", en la ciudad de "+Ciudad+ ". "+ Avion.toString());
+		String retorno = " Bienvenido!!!, Se encuentra en "+Nombre +", en la ciudad de "+Ciudad+ ". Y tiene los siguientes aviones: ";
+		for(Avion AvionesGuardados : Aviones) {
+			//Añades a la concatenacion con += es lo mismo que //retorno = retorno + AvionesGuardados.toString();
+			retorno += AvionesGuardados.toString();
+		}
+		
+		return retorno;
 	}
-	
 	
 }

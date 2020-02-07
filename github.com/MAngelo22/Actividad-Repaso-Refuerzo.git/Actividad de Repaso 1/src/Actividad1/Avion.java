@@ -76,7 +76,7 @@ public class Avion {
 	}
 	
 	public String toString() {
-		return ("Su avión es el "+ID+" lleva recorridos "+ Kilometros+" Kilometros"+
+		return (" //-- El avion "+ID+" lleva recorridos "+ Kilometros+" Kilometros"+
 				Asientos.toString()+Motores.toString()+Ruedas.toString());
 	}
 	

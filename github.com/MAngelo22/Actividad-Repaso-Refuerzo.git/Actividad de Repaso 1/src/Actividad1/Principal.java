@@ -1,5 +1,7 @@
 package Actividad1;
 
+import java.util.ArrayList;
+
 public class Principal {
 
 	public static void main(String[] args) {
@@ -10,6 +12,8 @@ public class Principal {
 		Avion Av1, Av2;
 		Aeropuerto aeropuerto;
 		
+		ArrayList<Avion> listaAvion = new ArrayList<Avion>();//ALmacenar objetos complejos o POO
+		
 		As1 = new Asientos (520, "Azul");
 		As2 = new Asientos (538, "Rojo y Blanco");
 		Mt1 = new Motores ("105000CV","300KW (KiloWatios)");
@@ -18,10 +22,11 @@ public class Principal {
 		Rd2 = new Ruedas ("Michellin", "Goma Blanda");
 		Av2 = new Avion (200000, "Icarus", As2, Mt2, Rd2, "A-30");
 		Av1 = new Avion (350000, "Pegasus", As1, Mt1, Rd1, "A-15");
-		aeropuerto = new Aeropuerto ("Heathrow", "Londres", Av1);
+		listaAvion.add(Av1);
+		listaAvion.add(Av2);
+		aeropuerto = new Aeropuerto ("Heathrow", "Londres", listaAvion);
 			
 		System.out.println(aeropuerto.toString());
-
+		
 	}
-
 }

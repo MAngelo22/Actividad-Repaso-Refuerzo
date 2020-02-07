@@ -27,7 +27,7 @@ public class Ruedas {
 	}
 	
 	public String toString() {
-		return ("La marca de las ruedas es "+ marca+", esta hecho de "+material+".");
+		return ("La marca de las ruedas es "+ marca+", esta hecho de "+material+". --//  ");
 	}
 	
 }
