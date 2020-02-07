@@ -12,7 +12,10 @@ public class Principal {
 		Avion Av1, Av2;
 		Aeropuerto aeropuerto;
 		
-		ArrayList<Avion> listaAvion = new ArrayList<Avion>();//ALmacenar objetos complejos o POO
+		ArrayList<Avion> listaAvion = new ArrayList<Avion>();
+		ArrayList<Asientos> listaAsientos = new ArrayList<Asientos>();
+		ArrayList<Motores> listaMotores = new ArrayList<Motores>();
+		ArrayList<Ruedas> listaRuedas = new ArrayList<Ruedas>();
 		
 		As1 = new Asientos (520, "Azul");
 		As2 = new Asientos (538, "Rojo y Blanco");
@@ -20,8 +23,14 @@ public class Principal {
 		Mt2 = new Motores ("108000CV", "400HP (HorsePower)");
 		Rd1 = new Ruedas ("Pirelli", "Goma Rigida");
 		Rd2 = new Ruedas ("Michellin", "Goma Blanda");
-		Av2 = new Avion (200000, "Icarus", As2, Mt2, Rd2, "A-30");
-		Av1 = new Avion (350000, "Pegasus", As1, Mt1, Rd1, "A-15");
+		listaAsientos.add(As1);
+		listaAsientos.add(As2);
+		listaMotores.add(Mt1);
+		listaMotores.add(Mt2);
+		listaRuedas.add(Rd1);
+		listaRuedas.add(Rd2);
+		Av2 = new Avion (200000, "Icarus", listaAsientos, listaMotores, listaRuedas, "A-30");
+		Av1 = new Avion (350000, "Pegasus", listaAsientos, listaMotores, listaRuedas, "A-15");
 		listaAvion.add(Av1);
 		listaAvion.add(Av2);
 		aeropuerto = new Aeropuerto ("Heathrow", "Londres", listaAvion);

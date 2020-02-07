@@ -5,14 +5,15 @@ import java.util.ArrayList;
 public class Avion {
 
 	private String Marca, ID;
-	//De otras clases.
-	private Asientos Asientos;
-	private Motores Motores;
-	private Ruedas Ruedas;
 	private int Kilometros;
+	//De otras clases.
+	private ArrayList<Ruedas> Ruedas;
+	private ArrayList<Asientos> Asientos;
+	private ArrayList<Motores> Motores;
 	
-	public Avion (int Kilometros, String Marca, Asientos Asientos, 
-			Motores Motores, Ruedas Ruedas, String ID) {
+	
+	public Avion (int Kilometros, String Marca, ArrayList<Asientos> Asientos,
+			ArrayList<Motores> Motores, ArrayList<Ruedas> Ruedas, String ID) {
 	super();
 	setKilometros(Kilometros);
 	setMarca(Marca);
@@ -43,30 +44,6 @@ public class Avion {
 		this.Marca = Marca;
 	}
 	
-	public Asientos getAsientos() {
-		return Asientos;
-	}
-	
-	public void setAsientos(Asientos Asientos) {
-		this.Asientos = Asientos;
-	}
-	
-	public Motores getMotores() {
-		return Motores;
-	}
-	
-	public void setMotores(Motores Motores) {
-		this.Motores = Motores;
-	}
-	
-	public Ruedas getRuedas() {
-		return Ruedas;
-	}
-	
-	public void setRuedas(Ruedas Ruedas) {
-		this.Ruedas = Ruedas;
-	}
-	
 	public String getID() {
 		return ID;
 	}
@@ -75,9 +52,44 @@ public class Avion {
 		this.ID = ID;
 	}
 	
+	public ArrayList<Asientos> getAsientos() {
+		return Asientos;
+	}
+	
+	public void setAsientos(ArrayList<Asientos> Asientos) {
+		this.Asientos = Asientos;
+	}
+	
+	public ArrayList<Motores> getMotores() {
+		return Motores;
+	}
+	
+	public void setMotores(ArrayList<Motores> Motores) {
+		this.Motores = Motores;
+	}
+	public ArrayList<Ruedas> getRuedas() {
+		return Ruedas;
+	}
+	
+	public void setRuedas(ArrayList<Ruedas> Ruedas) {
+		this.Ruedas = Ruedas;
+	}
 	public String toString() {
-		return (" //-- El avion "+ID+" lleva recorridos "+ Kilometros+" Kilometros"+
-				Asientos.toString()+Motores.toString()+Ruedas.toString());
+		String retorno = " //-- El avion "+ID+" lleva recorridos "+ Kilometros+" Kilometros ";
+		for(Asientos AsientosGuardados : Asientos) {
+			retorno += AsientosGuardados.toString();
+		}
+		
+		for(Motores MotoresGuardados : Motores) {
+			retorno += MotoresGuardados.toString();
+		}
+		
+		for(Ruedas RuedasGuardadas : Ruedas) {
+			//Añades a la concatenacion con += es lo mismo que //retorno = retorno + AvionesGuardados.toString();
+			retorno = retorno + RuedasGuardadas.toString();
+		}
+		
+		return retorno;
 	}
 	
 }

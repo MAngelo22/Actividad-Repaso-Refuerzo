@@ -28,6 +28,6 @@ public class Motores {
 	}
 	
 	public String toString() {
-		return ("El motor tiene "+CV+", tiene "+Cilindrada+". ");
+		return ("Dispone de un motor con "+CV+", tiene "+Cilindrada+". ");
 	}
 }
